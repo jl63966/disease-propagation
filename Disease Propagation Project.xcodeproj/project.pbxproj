@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2DD129DA2548CB0D00BC0AD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD129D92548CB0D00BC0AD8 /* main.cpp */; };
+		2DD129E82551B32400BC0AD8 /* disease_propagation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD129E62551B32400BC0AD8 /* disease_propagation.cpp */; };
+		2DD129EC2551C14F00BC0AD8 /* mexTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD129EB2551C14F00BC0AD8 /* mexTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		2DD129D62548CB0D00BC0AD8 /* Disease Propagation Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Disease Propagation Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD129D92548CB0D00BC0AD8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2DD129E62551B32400BC0AD8 /* disease_propagation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disease_propagation.cpp; sourceTree = "<group>"; };
+		2DD129E72551B32400BC0AD8 /* disease_propagation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disease_propagation.hpp; sourceTree = "<group>"; };
+		2DD129EB2551C14F00BC0AD8 /* mexTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mexTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				2DD129D92548CB0D00BC0AD8 /* main.cpp */,
+				2DD129EB2551C14F00BC0AD8 /* mexTest.cpp */,
+				2DD129E62551B32400BC0AD8 /* disease_propagation.cpp */,
+				2DD129E72551B32400BC0AD8 /* disease_propagation.hpp */,
 			);
 			path = "Disease Propagation Project";
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD129DA2548CB0D00BC0AD8 /* main.cpp in Sources */,
+				2DD129EC2551C14F00BC0AD8 /* mexTest.cpp in Sources */,
+				2DD129E82551B32400BC0AD8 /* disease_propagation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
