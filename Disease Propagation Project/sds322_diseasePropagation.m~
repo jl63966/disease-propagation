@@ -1,7 +1,19 @@
 %% SDS322 Disease Propagation
 
-mex main.cpp
+%mex main.cpp disease_propagation.cpp
 
 n = 40000; %population size
-d = 8; %disease duration
-r = 0.15;
+d = 8; %disease duration (days)
+r = 0.15; %transfer probability
+
+sick1 = main(n,d,0.15)*(100/n);
+sick2 = main(n,d,0.2)*(100/n);
+sick3 = main(n,d,0.25)*(100/n);
+
+days = [length(sick1),length(sick2),length(sick3)];
+
+plot(1:days(1),sick1,1:days(2),sick2,1:days(3),sick3)
+legend('r=15%','r=20%','r=25%')
+title(['Disease Propagation (pop. = ',num2str(n),')'])
+ylabel('Infection Cases (% of pop.)')
+xlabel('Days')

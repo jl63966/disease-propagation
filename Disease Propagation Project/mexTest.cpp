@@ -20,9 +20,10 @@ public:
         checkArguments(outputs, inputs);
 
         // Implement function
-        TypedArray<double> doubleArray = std::move(inputs[0]);
-        for (auto& elem : doubleArray) {
+        TypedArray<int> doubleArray = std::move(inputs[0]);
+        for (int& elem : doubleArray) {
             elem *= 2;
+            std::cout << elem << "\n";
         }
 
         // Assign outputs

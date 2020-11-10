@@ -1,2 +1,2 @@
 mex mexTest.cpp
-numbers = mexTest(1:10);
+numbers = mexTest(15);

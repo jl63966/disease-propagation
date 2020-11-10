@@ -82,9 +82,11 @@ private:
     vector<Person> populace;
 public:
     Population(){}
-    Population(int npeople, int infection_time){
+    Population(int npeople, int infection_time, float probability, int interactions){
         num_of_people = npeople;
         disease_duration = infection_time;
+        r = probability;
+        daily_interactions = interactions;
         for (int i=0; i<npeople; i++){
             Person citizen;
             populace.push_back(citizen);
@@ -135,13 +137,14 @@ public:
     
     void susc_interactions(Person &human, int human_number){
         vector<int> people_they_meet;
-        while (people_they_meet.size() < daily_interactions){
+        while (people_they_meet.size() <= daily_interactions){
             int stranger_number = rand()%num_of_people;
             if (stranger_number == human_number){continue;}
             bool repeat = false;
             for (auto i : people_they_meet){
                 if (i == stranger_number){
                     repeat = true;
+                    break;
                 }
             }
             if (repeat){continue;}
@@ -156,13 +159,14 @@ public:
                 if (bad_luck <= r){
                     human.infect(disease_duration+1);
                 }
+                break;
             }
         }
     }
     
     void sick_interactions(Person human, int human_number){
         vector<int> people_they_meet;
-        while (people_they_meet.size() < daily_interactions){
+        while (people_they_meet.size() <= daily_interactions){
             int stranger_number = rand()%num_of_people;
             if (stranger_number == human_number){continue;}
             bool repeat = false;
@@ -189,7 +193,6 @@ public:
     }
     
     void update(){
-        srand((unsigned)time(NULL));
         for (int i=0; i<num_of_people; i++){
             Person person_i = populace.at(i);
             int person_i_health = person_i.health();
@@ -207,12 +210,9 @@ public:
         }
     }
     
-    void transfer_probability(float probability){
-        r = probability;
-    }
 };
 //***************************************************************
 
-vector<int> propagator(int population_size, int disease_duration, float transfer_probability);
+vector<int> propagator(int population_size, int disease_duration, float transfer_probability, int interactions);
 
 #endif /* disease_propagation_hpp */
